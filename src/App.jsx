@@ -708,10 +708,10 @@ function App() {
 			{!isChecking ? (
 				<>
 					<p style={{ lineHeight: '1.6', marginBottom: '0.5rem' }}>
-						Here, you are presented with a choice between (1), one of the outcomes in your decision problem, and (2), a lottery between your most and least preferred outcomes.
+						Here, you are presented with a choice between <strong>(1)</strong>, one of the outcomes in your decision problem, and <strong>(2)</strong>, a lottery between your most and least preferred outcomes.
 					</p>
 					<p style={{ lineHeight: '1.6', marginTop: '0' }}>
-						Your task is to think about which one of these two you would choose with different probabilities of winning the lottery. Move the slider to adjust that probability. Ultimately, you want to find the probability of winning the lottery that will make you indifferent between (1) and (2). See these <a href="https://youtu.be/qAxERI8GbaY?si=Sy_bv4m54nM-5Prm&t=188" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>two</a> <a href="https://youtu.be/HXXgJXYa0Zs?si=fsPzBuDzqNbuIdjq&t=82" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>videos</a> for more explanation.
+						Your task is to think about which one of these you would choose for different probabilities of winning the lottery. Move the slider to adjust that probability. Ultimately, you want to find the probability of winning the lottery that will make you indifferent between (1) and (2). See these <a href="https://youtu.be/qAxERI8GbaY?si=Sy_bv4m54nM-5Prm&t=188" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>two</a> <a href="https://youtu.be/HXXgJXYa0Zs?si=fsPzBuDzqNbuIdjq&t=82" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>videos</a> for more explanation.
 					</p>
 					<hr style={{ border: 'none', borderTop: '1px solid #ddd', margin: '1rem 0' }} />
 					<p style={{ lineHeight: '1.6' }}>
