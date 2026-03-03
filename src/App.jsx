@@ -172,6 +172,40 @@ function reducer(state, action) {
   }
 }
 
+const Footer = () => (
+    <footer style={{ 
+      position: 'fixed',
+      bottom: 0,
+      left: 0,
+      width: '100%',
+      backgroundColor: '#343a40', 
+      color: '#ffffff',
+      padding: '1rem',
+      textAlign: 'center', 
+      fontSize: '0.95rem',
+      boxShadow: '0 -2px 10px rgba(0,0,0,0.15)',
+      zIndex: 1000,
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      gap: '15px' // Adds a nice space between your name and the icon
+    }}>
+      <span>
+        &copy; 2026 <a href="https://loighic.net/" target="_blank" rel="noopener noreferrer" className="author-link">
+          Gregory Scott Johnson
+        </a>
+      </span>
+
+      {/* GitHub Icon Link */}
+      <a href="https://github.com/loighic/vnm-utility" target="_blank" rel="noopener noreferrer" className="github-link" style={{ display: 'flex', alignItems: 'center' }}>
+        <svg height="22" width="22" viewBox="0 0 16 16" fill="#ffffff" style={{ cursor: 'pointer' }}>
+          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+        </svg>
+      </a>
+    </footer>
+  );
+
+
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
 
@@ -204,18 +238,18 @@ function App() {
   }, [state.phase, state.rankedOutcomes, state.utilities]);
 
   // --- REUSABLE STYLES FOR CENTERING ---
-  const outerContainerStyle = {
-    minHeight: '100vh',
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    padding: '2rem 2rem 5rem 2rem', 
-    boxSizing: 'border-box',
-    fontFamily: "'Lato', sans-serif",
-    backgroundColor: '#fdfdfd',
-  };
+	const outerContainerStyle = {
+		minHeight: '100vh',
+		width: '100%',
+		display: 'flex',
+		flexDirection: 'column', 
+		alignItems: 'center',
+		justifyContent: 'flex-start', // <-- Changed from 'center'
+		padding: '1rem 2rem 5rem 2rem', // <-- Change the first number (top padding) as needed.
+		boxSizing: 'border-box',
+		fontFamily: "'Lato', sans-serif",
+		backgroundColor: '#fdfdfd',
+		};
 
   const innerContainerStyle = {
     width: '100%',
@@ -223,39 +257,6 @@ function App() {
     margin: '0 auto',
   };
 
-const Footer = () => (
-    <footer style={{ 
-      position: 'fixed',
-      bottom: 0,
-      left: 0,
-      width: '100%',
-      backgroundColor: '#343a40', 
-      color: '#ffffff',
-      padding: '1rem',
-      textAlign: 'center', 
-      fontSize: '0.95rem',
-      boxShadow: '0 -2px 10px rgba(0,0,0,0.15)',
-      zIndex: 1000,
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      gap: '15px' // Adds a nice space between your name and the icon
-    }}>
-      <span>
-        &copy; 2026 <a href="https://loighic.net/" target="_blank" rel="noopener noreferrer" className="author-link">
-          Gregory Scott Johnson
-        </a>
-      </span>
-      
-
-      {/* GitHub Icon Link */}
-      <a href="https://github.com/loighic/vnm-utility" target="_blank" rel="noopener noreferrer" className="github-link" style={{ display: 'flex', alignItems: 'center' }}>
-        <svg height="22" width="22" viewBox="0 0 16 16" fill="#ffffff" style={{ cursor: 'pointer' }}>
-          <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
-        </svg>
-      </a>
-    </footer>
-  );
 
   const bestOutcome = useMemo(() => {
     if (!state.rankedOutcomes.length) return '';
@@ -703,12 +704,21 @@ const Footer = () => (
           <h1 style={{ textAlign: 'center' }}>Setting utility values</h1>
           <h2 style={{ textAlign: 'center' }}>Stage 3: The Standard Lottery</h2>
 
-          <div style={{ textAlign: 'center', minHeight: '3rem', marginBottom: '1rem' }}>
-            {!isChecking ? (
-              <p style={{ lineHeight: '1.6' }}>
-                Adjust the slider until you are completely indifferent between (1) and (2).
-              </p>
-            ) : (
+          <div style={{ textAlign: 'left', minHeight: '3rem', marginBottom: '1rem' }}>
+			{!isChecking ? (
+				<>
+					<p style={{ lineHeight: '1.6', marginBottom: '0.5rem' }}>
+						Here, you are presented with a choice between (1), one of the outcomes in your decision problem, and (2), a lottery between your most and least preferred outcomes.
+					</p>
+					<p style={{ lineHeight: '1.6', marginTop: '0' }}>
+						Your task is to think about which one of these two you would choose when there are different probabilities of winning the lottery. Move the slider to adjust that probability. Ultimately, you want to find the probability of winning the lottery that will make you indifferent between (1) and (2). See these <a href="https://youtu.be/qAxERI8GbaY?si=Sy_bv4m54nM-5Prm&t=188" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>two</a> <a href="https://youtu.be/HXXgJXYa0Zs?si=fsPzBuDzqNbuIdjq&t=82" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: '#007bff' }}>videos</a> for more explanation.
+					</p>
+					<hr style={{ border: 'none', borderTop: '1px solid #ddd', margin: '1rem 0' }} />
+					<p style={{ lineHeight: '1.6' }}>
+						Adjust the slider until you are completely indifferent between (1) and (2).
+					</p>
+				</>
+			) : (
               <p style={{ color: '#007bff', fontWeight: 'bold', fontSize: '1.1rem', lineHeight: '1.6' }}>
                 Consistency Check: We adjusted the odds. Click on the option you now prefer.
               </p>
